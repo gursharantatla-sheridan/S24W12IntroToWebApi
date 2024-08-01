@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 namespace S24W12IntroToWebApi
 {
     public class Program
@@ -13,6 +15,9 @@ namespace S24W12IntroToWebApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            // connection string
+            builder.Services.AddDbContext<BookContext>(opt => opt.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=BooksWebApi;Integrated Security=true;MultipleActiveResultSets=true"));
 
             var app = builder.Build();
 
