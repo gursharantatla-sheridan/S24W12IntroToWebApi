@@ -28,6 +28,9 @@ namespace S24W12IntroToWebApi
                 app.UseSwaggerUI();
             }
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
